@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 #Define system variables.
 steps = 100
-N = 50
-dt = 0.0025
+N = 100
+dt = 0.00245
 dx = 1. / N
 v1 = 0
 gamma = 1.4
@@ -49,10 +49,10 @@ grid = np.linspace(0, 1, N)
 initial = system
 
 for i in range(steps):
-#     plt.scatter(grid, v(system))
-#     plt.ylim((-2, 4))
-#     plt.savefig("frame%03i.png" % (i))
-#     plt.close()
+    plt.plot(grid, p(system), linestyle=":")
+    #plt.ylim((-2, 4))
+    plt.savefig("frame%03i.png" % (i))
+    plt.close()
     system = lax(system)
     
 plt.subplot(2, 2, 1)
